@@ -1,23 +1,20 @@
 require('rspec')
 require('my_hash')
+require('pry')
 
-describe(Parcel) do
-  describe('#volume') do
-    it('returns the volume of the parcel') do
-      test_parcel = Parcel.new(5,2,8,10)
-      expect(test_parcel.volume()).to(eq(80))
+describe(MyHash) do
+  describe('#my_store') do
+    it('add a key and value to a hash') do
+      test_hash = MyHash.new()
+      expect(test_hash.my_store("key1","value1")).to(eq("value1"))
     end
   end
-  describe('#cost_to_ship') do
-    it('returns the cost to ship the parcel') do
-      test_parcel = Parcel.new(5,2,8,10)
-      expect(test_parcel.cost_to_ship()).to(eq(50))
-    end
-  end
-  describe('#cost_to_ship') do
-    it('returns the cost to ship the parcel') do
-      test_parcel = Parcel.new(3,3,3,8)
-      expect(test_parcel.cost_to_ship()).to(eq(21.50))
+
+  describe('#my_fetch') do
+    it('add a key and value to a hash') do
+      test_hash = MyHash.new()
+      test_hash.my_store("key1","value1")
+      expect(test_hash.my_fetch("key1")).to(eq("value1"))
     end
   end
 end
